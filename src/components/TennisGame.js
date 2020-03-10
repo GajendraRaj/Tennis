@@ -38,8 +38,10 @@ function TennisGame() {
 
     return (
         <div>
-            <div>
-                <Player name={Constants.PLAYER1_NAME} onUpdateScore={incrementScore} isGameOver={isGameOver} />
+            <div className="playerContainer">
+                <div className="leftContainer">
+                    <Player name={Constants.PLAYER1_NAME} onUpdateScore={incrementScore} isGameOver={isGameOver} />
+                </div>
                 <Player name={Constants.PLAYER2_NAME} onUpdateScore={incrementScore} isGameOver={isGameOver} />
             </div>
             <Score player1Score={score.player1Score} player2Score={score.player2Score} onGameOver={notifyGameOver} />
