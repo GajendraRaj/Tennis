@@ -24,6 +24,12 @@ function TennisGame() {
         }
     }
 
+    const resetGame = () => {
+        setScore({player1Score: 0,
+            player2Score: 0
+        });
+    }
+
     return (
         <div>
             <div>
@@ -31,6 +37,7 @@ function TennisGame() {
                 <Player name={Constants.PLAYER2_NAME} onUpdateScore={incrementScore} />
             </div>
             <Score player1Score={score.player1Score} player2Score={score.player2Score} />
+            <br /><button onClick={resetGame}>{Constants.RESET_BUTTON_TEXT}</button>
         </div>
     );
 }

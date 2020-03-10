@@ -104,4 +104,11 @@ describe(('TennisGame game functionality'), () => {
         expect(wrapper.find('Score').find('label').text()).toEqual("Player 2 wins");
     });
 
+    it("On Reset the Game, Score Should be Love All", () => {
+        wrapper.find('Player').at(0).find('button').simulate('click').simulate('click');
+        wrapper.find('Player').at(1).find('button').simulate('click').simulate('click');
+        wrapper.find("button").at(2).simulate('click');
+        expect(wrapper.find('Score').find('label').text()).toEqual("Love all");
+      });
+
 });
