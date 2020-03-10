@@ -15,4 +15,9 @@ describe(('Scorer component'), () => {
   it('should have one heading', () => {
     expect(wrapper.find('h5').text()).toEqual('Score');
   });
+
+  it('should have one Label', () => {
+    expect(wrapper.find('label').length).toBe(1);
+  });
+
 });

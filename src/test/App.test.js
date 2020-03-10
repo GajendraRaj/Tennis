@@ -22,9 +22,4 @@ describe(('<App/> component'), () => {
   it("should load TennisGame component", () => {
     expect(wrapper.find(TennisGame)).toBeDefined();
   });
-
-  it("should load Score component", () => {
-    expect(wrapper.find(Score)).toBeDefined();
-  });
-
 });
