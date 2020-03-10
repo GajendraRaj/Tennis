@@ -10,6 +10,8 @@ function Score(props) {
             const SCORE_LOOKUP = ["Love", "Fifteen", "Thirty", "Forty"];
             const isPlayersScoreEqual = player1Score === player2Score;
             const isDeuce = player1Score >= 3;
+            const isPlayerScoredMorethanLookUpScore = player1Score > 3 || player2Score > 3;
+            const isAdvantage = Math.abs(player1Score - player2Score) === 1;
             const player = player1Score > player2Score ? 'Player 1' : 'Player 2'
             
             if(isPlayersScoreEqual) {
@@ -17,6 +19,11 @@ function Score(props) {
                     return 'Deuce';
                 }
                 return SCORE_LOOKUP[player1Score] + ' all';;
+            } else if (isPlayerScoredMorethanLookUpScore) {
+                if(isAdvantage) {
+                    return `Advantage ${player}`;
+                }
+                return `${player} wins`; 
             } else {
                 return SCORE_LOOKUP[player1Score] + ', ' + SCORE_LOOKUP[player2Score]; 
             }
