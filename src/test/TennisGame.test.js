@@ -76,4 +76,10 @@ describe(('TennisGame game functionality'), () => {
         expect(wrapper.find('Score').find('label').text()).toEqual('Thirty all');
     });
 
+    it('On both Players Scores thrice, Score Should be Deuce', () => {
+        wrapper.find('Player').at(0).find('button').simulate('click').simulate('click').simulate('click');
+        wrapper.find('Player').at(1).find('button').simulate('click').simulate('click').simulate('click');
+        expect(wrapper.find('Score').find('label').text()).toEqual('Deuce');
+      });
+
 });

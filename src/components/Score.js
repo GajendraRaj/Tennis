@@ -9,9 +9,13 @@ function Score(props) {
         const score = () => {
             const SCORE_LOOKUP = ["Love", "Fifteen", "Thirty", "Forty"];
             const isPlayersScoreEqual = player1Score === player2Score;
+            const isDeuce = player1Score >= 3;
             const player = player1Score > player2Score ? 'Player 1' : 'Player 2'
             
             if(isPlayersScoreEqual) {
+                if(isDeuce) {
+                    return 'Deuce';
+                }
                 return SCORE_LOOKUP[player1Score] + ' all';;
             } else {
                 return SCORE_LOOKUP[player1Score] + ', ' + SCORE_LOOKUP[player2Score]; 
