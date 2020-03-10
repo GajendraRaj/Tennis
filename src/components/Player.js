@@ -2,10 +2,14 @@ import React from 'react';
 import { Constants } from '../constants/Constants';
 
 function Player(props) {
+    const onUpdateScore = () => {
+        props.onUpdateScore(props.name);
+    }
+    
     return (
         <div>
             <h5>{props.name}</h5>
-            <button>{Constants.PLAYER_BUTTON_TEXT}</button>
+            <button onClick={onUpdateScore}>{Constants.PLAYER_BUTTON_TEXT}</button>
         </div>
     );
 }
