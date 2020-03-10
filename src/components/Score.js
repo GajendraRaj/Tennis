@@ -11,6 +11,8 @@ function Score(props) {
                         
             if(player1Score === 1 || player2Score === 1) {
                 return SCORE_LOOKUP[player1Score] + ', ' + SCORE_LOOKUP[player2Score]; 
+            } else if (player1Score === 2 || player2Score === 2) {
+                return SCORE_LOOKUP[player1Score] + ', ' + SCORE_LOOKUP[player2Score];
             } else {
                 return 'Love all';
             }

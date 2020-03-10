@@ -40,7 +40,20 @@ describe(('TennisGame game functionality'), () => {
     });
 
     it('On Player 2 Scores once, Score Should be Love Fifteen', () => {
-    wrapper.find('Player').at(1).find('button').simulate('click');
-    expect(wrapper.find('Score').find('label').text()).toEqual('Love, Fifteen');
+        wrapper.find('Player').at(1).find('button').simulate('click');
+        expect(wrapper.find('Score').find('label').text()).toEqual('Love, Fifteen');
     });
+
+    it('On Player 1 Scores twice, Score Should be Thirty Love', () => {
+        wrapper.find('Player').at(0).find('button').simulate('click').simulate('click');
+        expect(wrapper.find('Score').find('label').text()).toEqual('Thirty, Love');
+    });
+
+    it('On Player 2 Scores once, Score Should be Love Thirty', () => {
+        wrapper.find('Player').at(1).find('button').simulate('click').simulate('click');
+        expect(wrapper.find('Score').find('label').text()).toEqual('Love, Thirty');
+    });
+
+
+
 });
