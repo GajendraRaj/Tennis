@@ -3,7 +3,7 @@ import { Constants } from '../constants/Constants';
 
 function Score(props) {
     const [score, setScore] = useState(Constants.INITIAL_SCORE);
-    const { player1Score, player2Score } = props;
+    const { player1Score, player2Score, onGameOver } = props;
     
     useEffect(() => {
         const score = () => {
@@ -23,13 +23,14 @@ function Score(props) {
                 if(isAdvantage) {
                     return `Advantage ${player}`;
                 }
+                onGameOver();
                 return `${player} wins`; 
             } else {
                 return SCORE_LOOKUP[player1Score] + ', ' + SCORE_LOOKUP[player2Score]; 
             }
         };
         setScore(score);
-    }, [player1Score, player2Score ]);
+    }, [player1Score, player2Score, onGameOver ]);
 
     return (
         <div>

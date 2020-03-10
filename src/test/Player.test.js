@@ -20,4 +20,10 @@ describe(('Player component'), () => {
     expect(wrapper.find('button').length).toBe(1);
   });
 
+  it('should have one heading and no button on gameover', () => {
+    wrapper = shallow(< Player name="Player 1" onUpdateScore={() => { }} isGameOver={true} />);
+    expect(wrapper.find("h5").text()).toEqual("Player 1");
+    expect(wrapper.find("button").length).toBe(0);
+  });
+
 });
