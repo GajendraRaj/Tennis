@@ -54,6 +54,26 @@ describe(('TennisGame game functionality'), () => {
         expect(wrapper.find('Score').find('label').text()).toEqual('Love, Thirty');
     });
 
+    it('On Player 1 Scores thrice, Score Should be Forty Love', () => {
+        wrapper.find('Player').at(0).find('button').simulate('click').simulate('click').simulate('click');
+        expect(wrapper.find('Score').find('label').text()).toEqual('Forty, Love');
+    });
 
+    it('On Player 2 Scores thrice, Score Should be Love Forty', () => {
+        wrapper.find('Player').at(1).find('button').simulate('click').simulate('click').simulate('click');
+        expect(wrapper.find('Score').find('label').text()).toEqual('Love, Forty');
+    });
+
+    it('On both Players Scores once, Score Should be Fifteen all', () => {
+        wrapper.find('Player').at(0).find('button').simulate('click');
+        wrapper.find('Player').at(1).find('button').simulate('click');
+        expect(wrapper.find('Score').find('label').text()).toEqual('Fifteen all');
+    });
+
+    it('On both Players Scores twice, Score Should be Thirty all', () => {
+        wrapper.find('Player').at(0).find('button').simulate('click').simulate('click');
+        wrapper.find('Player').at(1).find('button').simulate('click').simulate('click');
+        expect(wrapper.find('Score').find('label').text()).toEqual('Thirty all');
+    });
 
 });

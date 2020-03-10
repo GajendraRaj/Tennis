@@ -8,13 +8,13 @@ function Score(props) {
     useEffect(() => {
         const score = () => {
             const SCORE_LOOKUP = ["Love", "Fifteen", "Thirty", "Forty"];
-                        
-            if(player1Score === 1 || player2Score === 1) {
-                return SCORE_LOOKUP[player1Score] + ', ' + SCORE_LOOKUP[player2Score]; 
-            } else if (player1Score === 2 || player2Score === 2) {
-                return SCORE_LOOKUP[player1Score] + ', ' + SCORE_LOOKUP[player2Score];
+            const isPlayersScoreEqual = player1Score === player2Score;
+            const player = player1Score > player2Score ? 'Player 1' : 'Player 2'
+            
+            if(isPlayersScoreEqual) {
+                return SCORE_LOOKUP[player1Score] + ' all';;
             } else {
-                return 'Love all';
+                return SCORE_LOOKUP[player1Score] + ', ' + SCORE_LOOKUP[player2Score]; 
             }
         };
         setScore(score);
