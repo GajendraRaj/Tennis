@@ -2,6 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import App from '../App';
 import TennisGame from '../components/TennisGame';
+import Score from '../components/Score';
 
 describe(('<App/> component'), () => {
   let wrapper;
@@ -21,5 +22,9 @@ describe(('<App/> component'), () => {
   it("should load TennisGame component", () => {
     expect(wrapper.find(TennisGame)).toBeDefined();
   });
-  
+
+  it("should load Score component", () => {
+    expect(wrapper.find(Score)).toBeDefined();
+  });
+
 });
